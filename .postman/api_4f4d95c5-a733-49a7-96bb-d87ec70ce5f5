@@ -9,6 +9,7 @@ id = 4f4d95c5-a733-49a7-96bb-d87ec70ce5f5
 
 [config.relations.collections]
 rootDirectory = postman/collections
+files[] = {"id":"9525326-d9c0f049-3d56-4bb9-8477-45d051f52d8f","path":"Al-Aryaf.json","metaData":{}}
 
 [config.relations.collections.metaData]
 
