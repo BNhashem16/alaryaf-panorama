@@ -5232,12 +5232,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{arayaf}}/contactaaa",
+					"raw": "{{arayaf}}/contact",
 					"host": [
 						"{{arayaf}}"
 					],
 					"path": [
-						"contactaaa"
+						"contact"
 					]
 				},
 				"description": "Send Conatct us Message"
