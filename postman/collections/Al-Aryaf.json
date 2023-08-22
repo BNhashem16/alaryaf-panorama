@@ -541,364 +541,39 @@
 					"id": "ef793d5e-8b84-42e8-9dfe-c9c9ca9b3ff1"
 				},
 				{
-					"name": "Profile",
-					"item": [
+					"name": "logout",
+					"event": [
 						{
-							"name": "Update  User Profile",
-							"id": "4d68bb40-cfaa-4ed8-a59b-38b48d5bcf27",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									}
+							"listen": "test",
+							"script": {
+								"id": "327500f1-c32e-45ac-a283-2140a23ea6ad",
+								"exec": [
+									"\r",
+									"var response = pm.response.json();\r",
+									"pm.environment.set(\"ALARYAF_AUTHORIZATION\", null);\r",
+									"\r",
+									"pm.test('user logged out successfully', function() {\r",
+									"    pm.response.to.have.status(200)\r",
+									"})\r",
+									""
 								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Moustafa",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "moustafa@fmoustafa.com",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "fcm_token_android",
-											"value": "454sda",
-											"type": "text"
-										},
-										{
-											"key": "fcm_token_ios",
-											"value": "454sda",
-											"type": "text"
-										},
-										{
-											"key": "lat",
-											"value": "17.0.1",
-											"type": "text"
-										},
-										{
-											"key": "long",
-											"value": "18.10",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/user/update/profile",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"update",
-										"profile"
-									]
-								},
-								"description": "Update a Client with The Regular Way"
-							},
-							"response": [
-								{
-									"id": "0496c175-f20e-47ed-ab35-25c5b127fc0b",
-									"name": "Update  User Profile",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-localization",
-												"value": "ar"
-											},
-											{
-												"key": "Authorization",
-												"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "name",
-													"value": "Moustafa",
-													"description": "unique",
-													"type": "text"
-												},
-												{
-													"key": "email",
-													"value": "moustafa@fmoustafa.com",
-													"description": "unique",
-													"type": "text"
-												},
-												{
-													"key": "phone",
-													"value": "011552765861",
-													"description": "unique",
-													"type": "text"
-												},
-												{
-													"key": "fcm_token_android",
-													"value": "454sda",
-													"type": "text"
-												},
-												{
-													"key": "fcm_token_ios",
-													"value": "454sda",
-													"type": "text"
-												},
-												{
-													"key": "lat",
-													"value": "17.0.1",
-													"type": "text"
-												},
-												{
-													"key": "long",
-													"value": "18.10",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{arayaf}}/user/update/profile",
-											"host": [
-												"{{arayaf}}"
-											],
-											"path": [
-												"user",
-												"update",
-												"profile"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:30:50 +0000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:30:50 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM4NTAsIm5iZiI6MTU0NzA4Mzg1MCwianRpIjoieUxuenVqRkFpZWg3WERHMCIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.d9G1GgTawk7u6UWk-E5fu20lpYPZKsXcKZYgAUujWdU\"\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Update Password",
-							"id": "5a967720-2e5e-455e-b076-9150a169e390",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "old_password",
-											"value": "asd123",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "asd123"
-										},
-										{
-											"key": "password_confirmation",
-											"value": "asd123"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/user/update/profile",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"update",
-										"profile"
-									]
-								},
-								"description": "Update a Client with The Regular Way"
-							},
-							"response": [
-								{
-									"id": "f62e670d-3a38-46f6-8097-722b57acb9fa",
-									"name": "Update Password",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-localization",
-												"value": "ar"
-											},
-											{
-												"key": "Authorization",
-												"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "old_password",
-													"value": "asd123",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "asd123"
-												},
-												{
-													"key": "password_confirmation",
-													"value": "asd123"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{arayaf}}/user/update/profile",
-											"host": [
-												"{{arayaf}}"
-											],
-											"path": [
-												"user",
-												"update",
-												"profile"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:29:22 +0000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:29:22 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM3NjIsIm5iZiI6MTU0NzA4Mzc2MiwianRpIjoiU1RjR2NiTTNlajBWNVlxNiIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.LOohAXe_i_KDyccsCK49KdgMR7AcfLmc3xacn28uYCw\"\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
-								}
-							]
+								"type": "text/javascript"
+							}
 						}
 					],
-					"id": "182dd59f-fe71-4456-ba92-cff0a7d43208"
-				},
-				{
-					"name": "Logout",
 					"id": "46c06b40-5268-4388-9888-a4ce393db221",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0MDM4MDY5OSwiZXhwIjoxNTQxNTkwMjk5LCJuYmYiOjE1NDAzODA2OTksImp0aSI6IjRnWm9DT3p2TGszcnNodlQiLCJzdWIiOjE4LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.5zHabPiDvuL4APseMdVN4ExA2Oh-Sk9nQXxVMhxUqFI"
-							}
-						],
+						"method": "POST",
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/user/logout",
+							"raw": "{{ALARYAF_URL}}/logout",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"user",
 								"logout"
 							]
 						}
@@ -1128,16 +803,17 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "03d2b923-4133-4bd2-906d-efaff1acdb82",
 								"exec": [
 									""
 								],
-								"type": "text/javascript",
-								"id": "03d2b923-4133-4bd2-906d-efaff1acdb82"
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "test",
 							"script": {
+								"id": "b4646ca4-a29b-47fe-9e10-a8627d994c08",
 								"exec": [
 									"\r",
 									"var response = pm.response.json();\r",
@@ -1179,8 +855,7 @@
 									"});\r",
 									""
 								],
-								"type": "text/javascript",
-								"id": "b4646ca4-a29b-47fe-9e10-a8627d994c08"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1216,12 +891,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ALARYAF_URL}}/auth/login",
+							"raw": "{{ALARYAF_URL}}/login",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"auth",
 								"login"
 							]
 						},
@@ -1235,6 +909,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
 								"exec": [
 									"\r",
 									"var response = pm.response.json();\r",
@@ -1276,8 +951,7 @@
 									"});\r",
 									""
 								],
-								"type": "text/javascript",
-								"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1302,13 +976,13 @@
 								},
 								{
 									"key": "email",
-									"value": "test2@example.com",
+									"value": "test5@example.comq",
 									"description": "unique, nullable, email",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "01252125143",
+									"value": "012521251141",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -1344,12 +1018,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ALARYAF_URL}}/auth/register",
+							"raw": "{{ALARYAF_URL}}/register",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"auth",
 								"register"
 							]
 						},
@@ -2071,101 +1744,8 @@
 			"id": "b5e811e2-fef3-4c8a-9152-e4f0e67519ca"
 		},
 		{
-			"name": "Products",
+			"name": "Product",
 			"item": [
-				{
-					"name": "Get All Categories",
-					"id": "9623730c-8e1a-4ef3-a7c5-59dc3c4c5442",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/categories",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"categories"
-							]
-						},
-						"description": "Show All Categories - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "3994dc9e-5e56-4d8f-92a2-c5ed8e3caf05",
-							"name": "Get All Categories",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/categories",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"categories"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
-						}
-					]
-				},
 				{
 					"name": "Get All SubCategories By category ID",
 					"id": "f974ea49-b3cd-48c8-bd33-dbbe80714081",
@@ -5198,6 +4778,430 @@
 			"id": "69da47c4-5b32-422b-abdf-a87e6dce4302"
 		},
 		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "update-profile",
+					"id": "4d68bb40-cfaa-4ed8-a59b-38b48d5bcf27",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "hashem",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01157569289",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "17.0.1",
+									"type": "text",
+									"description": "nullable"
+								},
+								{
+									"key": "long",
+									"value": "18.10",
+									"type": "text",
+									"description": "nullable"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/update-profile",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"update-profile"
+							]
+						},
+						"description": "Update a Client with The Regular Way"
+					},
+					"response": [
+						{
+							"id": "0496c175-f20e-47ed-ab35-25c5b127fc0b",
+							"name": "Update  User Profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "ar"
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Moustafa",
+											"description": "unique",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "moustafa@fmoustafa.com",
+											"description": "unique",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "011552765861",
+											"description": "unique",
+											"type": "text"
+										},
+										{
+											"key": "fcm_token_android",
+											"value": "454sda",
+											"type": "text"
+										},
+										{
+											"key": "fcm_token_ios",
+											"value": "454sda",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "17.0.1",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "18.10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{arayaf}}/user/update/profile",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"user",
+										"update",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:30:50 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:30:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM4NTAsIm5iZiI6MTU0NzA4Mzg1MCwianRpIjoieUxuenVqRkFpZWg3WERHMCIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.d9G1GgTawk7u6UWk-E5fu20lpYPZKsXcKZYgAUujWdU\"\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update-password",
+					"id": "5a967720-2e5e-455e-b076-9150a169e390",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-localization",
+								"value": "ar"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password1"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/change-password",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"change-password"
+							]
+						},
+						"description": "Update a Client with The Regular Way"
+					},
+					"response": [
+						{
+							"id": "f62e670d-3a38-46f6-8097-722b57acb9fa",
+							"name": "Update Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "ar"
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "asd123",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "asd123"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "asd123"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{arayaf}}/user/update/profile",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"user",
+										"update",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:29:22 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:29:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM3NjIsIm5iZiI6MTU0NzA4Mzc2MiwianRpIjoiU1RjR2NiTTNlajBWNVlxNiIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.LOohAXe_i_KDyccsCK49KdgMR7AcfLmc3xacn28uYCw\"\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
+						}
+					]
+				}
+			],
+			"id": "182dd59f-fe71-4456-ba92-cff0a7d43208"
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "all-categories",
+					"id": "9623730c-8e1a-4ef3-a7c5-59dc3c4c5442",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/categories?limit=2&page=2",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Show All Categories - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": [
+						{
+							"id": "3994dc9e-5e56-4d8f-92a2-c5ed8e3caf05",
+							"name": "Get All Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "ar"
+									}
+								],
+								"url": {
+									"raw": "{{arayaf}}/categories",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:16:07 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:16:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
+						}
+					]
+				}
+			],
+			"id": "b4fd80ba-a540-40a2-ab03-8061cf94b944"
+		},
+		{
 			"name": "Send Conatct us Message",
 			"id": "8ff77af6-0b3c-4bde-9280-4bd157148125",
 			"protocolProfileBehavior": {
@@ -5329,27 +5333,82 @@
 					"body": "{\n    \"value\": true,\n    \"data\": \"تم ارسال رسالتك بنجاح\",\n    \"comment\": \" مرة أتنين صحاب راحوا للحلاق واحد حلق والتاني غويشه.\"\n}"
 				}
 			]
+		},
+		{
+			"name": "home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a77a9f67-cfe9-4c9d-ba21-247b1f4cf7e7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ALARYAF_URL}}/home?limit=",
+					"host": [
+						"{{ALARYAF_URL}}"
+					],
+					"path": [
+						"home"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Register a New Client with The Regular Way"
+			},
+			"response": []
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{ALARYAF_AUTHORIZATION}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "159e96bc-d8f3-4f9e-a0f5-180af48e2cd8",
 				"type": "text/javascript",
 				"exec": [
-					"pm.request.headers.add({key: 'X-localization', value: 'ar' })"
-				],
-				"id": "52ebc2d6-bb29-4395-bc91-b90bc5f86564"
+					"pm.request.headers.add({key: 'X-localization', value: 'ar' })",
+					"pm.request.headers.add({key: 'Accept', value: 'application/json' })"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "64e709ff-30a6-4b6d-b672-1434a30d0231",
 				"type": "text/javascript",
 				"exec": [
 					""
-				],
-				"id": "0cec5e23-eaf7-4413-a2f2-ba81e8f01be5"
+				]
 			}
 		}
 	]
