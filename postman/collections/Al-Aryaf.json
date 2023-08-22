@@ -5110,7 +5110,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories?limit=2&page=3",
+							"raw": "{{ALARYAF_URL}}/categories?limit=2&page=1",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -5124,7 +5124,7 @@
 								},
 								{
 									"key": "page",
-									"value": "3"
+									"value": "1"
 								}
 							]
 						},
