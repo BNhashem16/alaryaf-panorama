@@ -581,100 +581,6 @@
 					"response": []
 				},
 				{
-					"name": "Get User Info",
-					"id": "ec532f4a-01a6-410b-9f36-c08d63b0f6e7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/user/info",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"user",
-								"info"
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "3251391f-7a5d-482c-82f7-823c0614f370",
-							"name": "Get User Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/user/info",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"info"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 15 Jan 2019 13:10:15 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 15 Jan 2019 13:10:15 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"unread_notification\": 0,\n        \"wallet\": 5,\n        \"cart_items\": 1\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
-						}
-					]
-				},
-				{
 					"name": "Activate User",
 					"id": "da2f1749-a5d9-4f00-9a14-2dd64ce17cda",
 					"protocolProfileBehavior": {
@@ -5088,6 +4994,94 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM3NjIsIm5iZiI6MTU0NzA4Mzc2MiwianRpIjoiU1RjR2NiTTNlajBWNVlxNiIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.LOohAXe_i_KDyccsCK49KdgMR7AcfLmc3xacn28uYCw\"\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show-profile",
+					"id": "ec532f4a-01a6-410b-9f36-c08d63b0f6e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/profile",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3251391f-7a5d-482c-82f7-823c0614f370",
+							"name": "Get User Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
+									}
+								],
+								"url": {
+									"raw": "{{arayaf}}/user/info",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"user",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jan 2019 13:10:15 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jan 2019 13:10:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"unread_notification\": 0,\n        \"wallet\": 5,\n        \"cart_items\": 1\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
 						}
 					]
 				}
