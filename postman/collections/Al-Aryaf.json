@@ -286,261 +286,6 @@
 			"name": "Auth",
 			"item": [
 				{
-					"name": "Forget Password",
-					"item": [
-						{
-							"name": "Forget Password | Send Reset",
-							"id": "1af09015-8a0c-4dab-9f26-9d35d6c91783",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/forget",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"forget"
-									]
-								},
-								"description": "Forget Password | Send Reset"
-							},
-							"response": [
-								{
-									"id": "81db7e8e-7576-4d78-afd2-7ea5c8fa1264",
-									"name": "Forget Password | Send Reset",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-localization",
-												"value": "en"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "phone",
-													"value": "011552765861",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{arayaf}}/auth/forget",
-											"host": [
-												"{{arayaf}}"
-											],
-											"path": [
-												"auth",
-												"forget"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:33:28 +0000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:33:28 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"value\": true,\n    \"data\": {\n        \"message\": \"Confirmation Code Has Been Sent Successfully to Your Phone\",\n        \"code\": 1234\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
-								}
-							]
-						},
-						{
-							"name": "Submit Reset Code & Set Password",
-							"id": "d466e08c-95a3-4485-b35e-e1a360cd7164",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "reset_code",
-											"value": "1234",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "asd123",
-											"type": "text"
-										},
-										{
-											"key": "password_confirmation",
-											"value": "asd123",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/reset",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"reset"
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "1e42ec1b-88be-41b3-b649-a6220b3456a9",
-									"name": "Submit Reset Code & Set Password",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "reset_code",
-													"value": "1234",
-													"type": "text"
-												},
-												{
-													"key": "phone",
-													"value": "011552765861",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "asd123",
-													"type": "text"
-												},
-												{
-													"key": "password_confirmation",
-													"value": "asd123",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{arayaf}}/auth/reset",
-											"host": [
-												"{{arayaf}}"
-											],
-											"path": [
-												"auth",
-												"reset"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:33:58 +0000"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 10 Jan 2019 01:33:58 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZXNldCIsImlhdCI6MTU0NzA4NDAzNywibmJmIjoxNTQ3MDg0MDM3LCJqdGkiOiIwNGhrNHJJNm12TkkySWJMIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.vgWluSj7R1dwNGKSgrAqRt5XNTjlGEyY6aYhUIedu3o\"\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
-								}
-							]
-						}
-					],
-					"id": "ef793d5e-8b84-42e8-9dfe-c9c9ca9b3ff1"
-				},
-				{
 					"name": "logout",
 					"event": [
 						{
@@ -579,129 +324,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Activate User",
-					"id": "da2f1749-a5d9-4f00-9a14-2dd64ce17cda",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-							},
-							{
-								"key": "X-localization",
-								"value": "en"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "verification_code",
-									"value": "1234",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/auth/activate",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"auth",
-								"activate"
-							]
-						},
-						"description": "Activate User"
-					},
-					"response": [
-						{
-							"id": "bbd1ab1f-4394-450d-9550-7db9ac440354",
-							"name": "Activate User",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									},
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "verification_code",
-											"value": "1234",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/activate",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"activate"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:36:55 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:36:55 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"Your Account Has been Confirmed Successfully\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
-						}
-					]
 				},
 				{
 					"name": "login",
@@ -4299,29 +3921,45 @@
 			"id": "d54fcef3-5a0d-4b59-85a8-88266d229329"
 		},
 		{
-			"name": "Notifications",
+			"name": "Notification",
 			"item": [
 				{
-					"name": "Get  Authenticated User Notifications",
+					"name": "notifications",
 					"id": "fcee27ce-9929-4855-bee2-7c1d09f8d412",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/user/notifications",
+							"raw": "{{ALARYAF_URL}}/notifications",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"user",
+								"notifications"
+							]
+						},
+						"description": "Get All Areas - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": []
+				},
+				{
+					"name": "delete-all-notifications",
+					"id": "44c4f120-29e1-42f7-b536-75f0e70d818a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/notifications",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
 								"notifications"
 							]
 						},
@@ -5196,6 +4834,341 @@
 			"id": "b4fd80ba-a540-40a2-ab03-8061cf94b944"
 		},
 		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "all-orders-available",
+					"id": "080820ec-0a2c-435d-8f12-0c51aec73946",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/orders?limit=20&order_status=approved",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "order_status",
+									"value": "approved",
+									"description": "approved, pending, is_delivered"
+								}
+							]
+						},
+						"description": "Get All Areas - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": []
+				},
+				{
+					"name": "change-order-status",
+					"id": "64805630-fff9-46d3-a594-b612017b3817",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "approved",
+									"description": "sholud be one of approved, is_delivered",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/orders/:order_id/change-status",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"orders",
+								":order_id",
+								"change-status"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "12"
+								}
+							]
+						},
+						"description": "Get All Areas - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": []
+				}
+			],
+			"id": "d34cf536-d16d-442d-9f09-a6180b915e3c"
+		},
+		{
+			"name": "Forget Password",
+			"item": [
+				{
+					"name": "Forget Password | Send Reset",
+					"id": "1af09015-8a0c-4dab-9f26-9d35d6c91783",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-localization",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "011552765861",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{arayaf}}/auth/forget",
+							"host": [
+								"{{arayaf}}"
+							],
+							"path": [
+								"auth",
+								"forget"
+							]
+						},
+						"description": "Forget Password | Send Reset"
+					},
+					"response": [
+						{
+							"id": "81db7e8e-7576-4d78-afd2-7ea5c8fa1264",
+							"name": "Forget Password | Send Reset",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "011552765861",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{arayaf}}/auth/forget",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"auth",
+										"forget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:33:28 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:33:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"message\": \"Confirmation Code Has Been Sent Successfully to Your Phone\",\n        \"code\": 1234\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Submit Reset Code & Set Password",
+					"id": "d466e08c-95a3-4485-b35e-e1a360cd7164",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "reset_code",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "011552765861",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "asd123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "asd123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{arayaf}}/auth/reset",
+							"host": [
+								"{{arayaf}}"
+							],
+							"path": [
+								"auth",
+								"reset"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1e42ec1b-88be-41b3-b649-a6220b3456a9",
+							"name": "Submit Reset Code & Set Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "reset_code",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "011552765861",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "asd123",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "asd123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{arayaf}}/auth/reset",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"auth",
+										"reset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:33:58 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:33:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZXNldCIsImlhdCI6MTU0NzA4NDAzNywibmJmIjoxNTQ3MDg0MDM3LCJqdGkiOiIwNGhrNHJJNm12TkkySWJMIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.vgWluSj7R1dwNGKSgrAqRt5XNTjlGEyY6aYhUIedu3o\"\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
+						}
+					]
+				}
+			],
+			"id": "ef793d5e-8b84-42e8-9dfe-c9c9ca9b3ff1"
+		},
+		{
 			"name": "Send Conatct us Message",
 			"id": "8ff77af6-0b3c-4bde-9280-4bd157148125",
 			"protocolProfileBehavior": {
@@ -5371,6 +5344,129 @@
 				"description": "Register a New Client with The Regular Way"
 			},
 			"response": []
+		},
+		{
+			"name": "Activate User",
+			"id": "da2f1749-a5d9-4f00-9a14-2dd64ce17cda",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+					},
+					{
+						"key": "X-localization",
+						"value": "en"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "verification_code",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{arayaf}}/auth/activate",
+					"host": [
+						"{{arayaf}}"
+					],
+					"path": [
+						"auth",
+						"activate"
+					]
+				},
+				"description": "Activate User"
+			},
+			"response": [
+				{
+					"id": "bbd1ab1f-4394-450d-9550-7db9ac440354",
+					"name": "Activate User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+							},
+							{
+								"key": "X-localization",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "verification_code",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{arayaf}}/auth/activate",
+							"host": [
+								"{{arayaf}}"
+							],
+							"path": [
+								"auth",
+								"activate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Jan 2019 01:36:55 +0000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Jan 2019 01:36:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"value\": true,\n    \"data\": \"Your Account Has been Confirmed Successfully\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
+				}
+			]
 		}
 	],
 	"auth": {
