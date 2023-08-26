@@ -511,7 +511,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "01157569289",
+									"value": "01157569282",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -683,18 +683,19 @@
 							"formdata": [
 								{
 									"key": "code",
-									"value": "",
+									"value": "1234",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "",
+									"value": "01157569289",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "",
-									"type": "text"
+									"value": "hashem@admin.com",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -5044,7 +5045,36 @@
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": []
+							"formdata": [
+								{
+									"key": "type",
+									"value": "email",
+									"description": "phone, email",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "cause",
+									"value": "verify-email",
+									"description": "verify-phone, verify-email, forget-password",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01157569289",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "hashem@admin.com",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "{{ALARYAF_URL}}/check-code",
@@ -5159,20 +5189,20 @@
 								},
 								{
 									"key": "cause",
-									"value": "verify-email",
+									"value": "verify-phone",
 									"type": "text",
 									"description": "verify-phone, verify-email, forget-password"
 								},
 								{
 									"key": "phone",
 									"value": "01157569289",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "email",
 									"value": "hashem@admin.com",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -5437,8 +5467,7 @@
 					"query": [
 						{
 							"key": "limit",
-							"value": "",
-							"type": "text"
+							"value": ""
 						}
 					]
 				},
