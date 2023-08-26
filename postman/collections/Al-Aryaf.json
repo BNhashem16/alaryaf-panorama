@@ -506,11 +506,12 @@
 									"key": "email",
 									"value": "test5@example.comq",
 									"description": "unique, nullable, email",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "phone",
-									"value": "012521251141",
+									"value": "01157569289",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -557,6 +558,239 @@
 						"description": "Register a New Client with The Regular Way"
 					},
 					"response": []
+				},
+				{
+					"name": "reset-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+								"exec": [
+									"\r",
+									"var response = pm.response.json();\r",
+									"pm.environment.set(\"ALARYAF_AUTHORIZATION\", response.data.token);\r",
+									"\r",
+									"pm.test('user login successfully', function() {\r",
+									"    pm.response.to.have.status(200)\r",
+									"})\r",
+									"\r",
+									"\r",
+									"pm.test('user should have the expected phone', function() {\r",
+									"    var phoneParam = pm.request.body.formdata.find(param => param.key === \"phone\");\r",
+									"    pm.expect(response.data.phone).to.equal(phoneParam.value);\r",
+									"    pm.response.to.have.status(200)\r",
+									"})\r",
+									"\r",
+									"\r",
+									"var template = `\r",
+									"    <table bgcolor=\"#FFFFFF\">\r",
+									"        <tr>\r",
+									"            <th>ID</th>\r",
+									"            <th>Name</th>\r",
+									"            <th>Token</th>\r",
+									"        </tr>\r",
+									"\r",
+									"        {{#each response}}\r",
+									"            <tr>\r",
+									"                <td>{{id}}</td>\r",
+									"                <td>{{name}}</td>\r",
+									"                <td>{{token}}</td>\r",
+									"\r",
+									"            </tr>\r",
+									"        {{/each}}\r",
+									"    </table>\r",
+									"`;\r",
+									"\r",
+									"pm.visualizer.set(template, {\r",
+									"    response: pm.response.json()\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2f858a55-8c4a-4670-be3f-aac16e72cee4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "01157569289",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "1234",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/reset-password",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						},
+						"description": "Register a New Client with The Regular Way"
+					},
+					"response": []
+				},
+				{
+					"name": "activate-account",
+					"id": "da2f1749-a5d9-4f00-9a14-2dd64ce17cda",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/activate",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"activate"
+							]
+						},
+						"description": "Activate User"
+					},
+					"response": [
+						{
+							"id": "bbd1ab1f-4394-450d-9550-7db9ac440354",
+							"name": "Activate User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
+									},
+									{
+										"key": "X-localization",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "verification_code",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{arayaf}}/auth/activate",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"auth",
+										"activate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:36:55 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 01:36:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": \"Your Account Has been Confirmed Successfully\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
+						}
+					]
 				}
 			],
 			"id": "974db5ae-0ba2-415d-b3a9-b19b76281737"
@@ -1275,313 +1509,31 @@
 			"name": "Product",
 			"item": [
 				{
-					"name": "Get All SubCategories By category ID",
-					"id": "f974ea49-b3cd-48c8-bd33-dbbe80714081",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/sub_categories/1",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"sub_categories",
-								"1"
-							]
-						},
-						"description": "Show All Sub Categories - Category - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "729fd650-95d7-446d-83a5-e031f3076596",
-							"name": "Get All SubCategories By category ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/sub_categories/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"sub_categories",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:23:21 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:23:21 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"تورت\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/tort.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"الباشا من هيبته بيتشتم في غيبته .\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Products By Sub category ID",
-					"id": "d5503b4a-67c3-426b-b43b-e4b967881106",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/products/1",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"products",
-								"1"
-							]
-						},
-						"description": "Get All Products - Sub category ID- Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "4bdc8301-8abf-43ee-98b2-2b870ec9e5b4",
-							"name": "Get All Products By Sub category ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/products/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"products",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": false,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Offers",
-					"id": "9aee42e5-4d9f-4122-ab07-655d48f34c7c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/products/offers",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"products",
-								"offers"
-							]
-						},
-						"description": "Get All Products - Sub category ID- Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "27ebc0f6-f842-45ea-b0c1-ae0361966e3f",
-							"name": "Get All Products By Sub category ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/products/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"products",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": false,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Product Details By product id",
+					"name": "show-product",
 					"id": "181e83b3-f6ee-484c-97b6-7ec51028bf3b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/products/single/1",
+							"raw": "{{ALARYAF_URL}}/products/:product",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
 								"products",
-								"single",
-								"1"
+								":product"
+							],
+							"variable": [
+								{
+									"key": "product",
+									"value": "2"
+								}
 							]
 						},
 						"description": "Get Product Details - product id- Can Change Lanugae using X-localization"
@@ -1657,92 +1609,48 @@
 					]
 				},
 				{
-					"name": "Add Comment To a Product",
-					"id": "bd5e6e8b-d187-43d6-a365-a4abf7d97f2c",
+					"name": "all-products",
+					"id": "aa0387ef-daaf-4191-b60f-4ff43429b6b9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzQ3NTIxNCwibmJmIjoxNTQ3NDc1MjE0LCJqdGkiOiJaU3M5SFdvcTMzTVJFcGNnIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.u70BUFEvqWGz14z9i3hpn7IlaINk0QPVmeX8LdmZ12o",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "rate",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "comment",
-									"value": "نعليق",
-									"type": "text"
-								}
-							]
-						},
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/products/add_comment/1",
+							"raw": "{{ALARYAF_URL}}/products",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"products",
-								"add_comment",
-								"1"
+								"products"
 							]
 						},
-						"description": "Add Comment To a Product  - product id- Can Change Lanugae using X-localization"
+						"description": "Get Product Details - product id- Can Change Lanugae using X-localization"
 					},
 					"response": [
 						{
-							"id": "3ea0cc5f-c39b-429e-a158-c319b664c80b",
-							"name": "Add Comment To a Product",
+							"id": "1341c91d-8c75-4930-85bd-8544532cb279",
+							"name": "Get Product Details By product id",
 							"originalRequest": {
-								"method": "POST",
+								"method": "GET",
 								"header": [
 									{
 										"key": "X-localization",
 										"value": "ar"
 									}
 								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "rate",
-											"value": "2",
-											"type": "text"
-										},
-										{
-											"key": "comment",
-											"value": "نعليق",
-											"type": "text"
-										}
-									]
-								},
 								"url": {
-									"raw": "{{arayaf}}/products/add_comment/1",
+									"raw": "{{arayaf}}/products/single/1",
 									"host": [
 										"{{arayaf}}"
 									],
 									"path": [
 										"products",
-										"add_comment",
+										"single",
 										"1"
 									]
 								}
@@ -1757,11 +1665,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 14 Jan 2019 14:16:14 +0000"
+									"value": "Thu, 10 Jan 2019 03:06:26 +0000"
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 14 Jan 2019 14:16:14 GMT"
+									"value": "Thu, 10 Jan 2019 03:06:26 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1789,7 +1697,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"تم اضافه التقييم بنجاح بنجاح\",\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"منتج رقم 1\",\n        \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\",\n        \"gallery\": [\n            {\n                \"id\": 1,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image.png\"\n            },\n            {\n                \"id\": 2,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image2.png\"\n            }\n        ],\n        \"price\": 300,\n        \"description\": \"وصف المنتج\",\n        \"components\": \"مكونات طبيعية\",\n        \"rates\": [\n            {\n                \"id\": 1,\n                \"comment\": \"منتج متوسط\",\n                \"user\": \"Moustafa\",\n                \"user_image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n                \"rate\": 3\n            }\n        ],\n        \"rate\": 3,\n        \"is_liked\": false,\n        \"discount\": {\n            \"has_discount\": true,\n            \"price_after_discount\": 270\n        }\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
 						}
 					]
 				}
@@ -4730,7 +4638,7 @@
 			"name": "Category",
 			"item": [
 				{
-					"name": "all-categories",
+					"name": "all-parent-categories",
 					"id": "9623730c-8e1a-4ef3-a7c5-59dc3c4c5442",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4742,7 +4650,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories?limit=2&page=1",
+							"raw": "{{ALARYAF_URL}}/categories?limit=20&page=1",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -4752,7 +4660,7 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "2"
+									"value": "20"
 								},
 								{
 									"key": "page",
@@ -4827,6 +4735,215 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
+						}
+					]
+				},
+				{
+					"name": "children-of-parent-category",
+					"id": "e2ad9ea5-a1ab-4b8b-b9c9-99612ada689e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/categories/:category/children?limit=2&page=1",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"categories",
+								":category",
+								"children"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Show All Categories - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": [
+						{
+							"id": "cbb9d4a0-dd47-41fb-90ce-d7e0bc056845",
+							"name": "Get All Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "ar"
+									}
+								],
+								"url": {
+									"raw": "{{arayaf}}/categories",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:16:07 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:16:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
+						}
+					]
+				},
+				{
+					"name": "products-of-sub-category",
+					"id": "d5503b4a-67c3-426b-b43b-e4b967881106",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/categories/:sub_category/products",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"categories",
+								":sub_category",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "sub_category",
+									"value": "51"
+								}
+							]
+						},
+						"description": "Get All Products - Sub category ID- Can Change Lanugae using X-localization"
+					},
+					"response": [
+						{
+							"id": "4bdc8301-8abf-43ee-98b2-2b870ec9e5b4",
+							"name": "Get All Products By Sub category ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "ar"
+									}
+								],
+								"url": {
+									"raw": "{{arayaf}}/products/1",
+									"host": [
+										"{{arayaf}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:56:22 +0000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 02:56:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": false,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
 						}
 					]
 				}
@@ -4914,47 +5031,35 @@
 			"id": "d34cf536-d16d-442d-9f09-a6180b915e3c"
 		},
 		{
-			"name": "Forget Password",
+			"name": "OTP",
 			"item": [
 				{
-					"name": "Forget Password | Send Reset",
-					"id": "1af09015-8a0c-4dab-9f26-9d35d6c91783",
+					"name": "check-code",
+					"id": "2132f4b8-aa91-4ceb-9cc9-fe9b7a21cb2c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "en"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "phone",
-									"value": "011552765861",
-									"type": "text"
-								}
-							]
+							"formdata": []
 						},
 						"url": {
-							"raw": "{{arayaf}}/auth/forget",
+							"raw": "{{ALARYAF_URL}}/check-code",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"auth",
-								"forget"
+								"check-code"
 							]
 						},
 						"description": "Forget Password | Send Reset"
 					},
 					"response": [
 						{
-							"id": "81db7e8e-7576-4d78-afd2-7ea5c8fa1264",
+							"id": "7448eeb5-16e1-430c-809d-df2a8207d10e",
 							"name": "Forget Password | Send Reset",
 							"originalRequest": {
 								"method": "POST",
@@ -5032,90 +5137,86 @@
 					]
 				},
 				{
-					"name": "Submit Reset Code & Set Password",
-					"id": "d466e08c-95a3-4485-b35e-e1a360cd7164",
+					"name": "send-otp",
+					"id": "964ac70f-7d94-4ce4-a979-df6644a2c8d0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "reset_code",
-									"value": "1234",
-									"type": "text"
+									"key": "type",
+									"value": "phone",
+									"type": "text",
+									"description": "phone, email"
+								},
+								{
+									"key": "cause",
+									"value": "verify-email",
+									"type": "text",
+									"description": "verify-phone, verify-email, forget-password"
 								},
 								{
 									"key": "phone",
-									"value": "011552765861",
-									"type": "text"
+									"value": "01157569289",
+									"type": "text",
+									"disabled": true
 								},
 								{
-									"key": "password",
-									"value": "asd123",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "asd123",
+									"key": "email",
+									"value": "hashem@admin.com",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{arayaf}}/auth/reset",
+							"raw": "{{ALARYAF_URL}}/send-otp",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"auth",
-								"reset"
+								"send-otp"
 							]
-						}
+						},
+						"description": "Forget Password | Send Reset"
 					},
 					"response": [
 						{
-							"id": "1e42ec1b-88be-41b3-b649-a6220b3456a9",
-							"name": "Submit Reset Code & Set Password",
+							"id": "21a4d831-5962-4013-a56a-9bb500e07ae5",
+							"name": "Forget Password | Send Reset",
 							"originalRequest": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "X-localization",
+										"value": "en"
+									}
+								],
 								"body": {
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "reset_code",
-											"value": "1234",
-											"type": "text"
-										},
-										{
 											"key": "phone",
 											"value": "011552765861",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "asd123",
-											"type": "text"
-										},
-										{
-											"key": "password_confirmation",
-											"value": "asd123",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{arayaf}}/auth/reset",
+									"raw": "{{arayaf}}/auth/forget",
 									"host": [
 										"{{arayaf}}"
 									],
 									"path": [
 										"auth",
-										"reset"
+										"forget"
 									]
 								}
 							},
@@ -5129,11 +5230,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:58 +0000"
+									"value": "Thu, 10 Jan 2019 01:33:28 +0000"
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:58 GMT"
+									"value": "Thu, 10 Jan 2019 01:33:28 GMT"
 								},
 								{
 									"key": "Connection",
@@ -5157,16 +5258,16 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "58"
+									"value": "59"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZXNldCIsImlhdCI6MTU0NzA4NDAzNywibmJmIjoxNTQ3MDg0MDM3LCJqdGkiOiIwNGhrNHJJNm12TkkySWJMIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.vgWluSj7R1dwNGKSgrAqRt5XNTjlGEyY6aYhUIedu3o\"\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
+							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"message\": \"Confirmation Code Has Been Sent Successfully to Your Phone\",\n        \"code\": 1234\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
 						}
 					]
 				}
 			],
-			"id": "ef793d5e-8b84-42e8-9dfe-c9c9ca9b3ff1"
+			"id": "1b17e378-7029-418b-94f6-ea869591f4d9"
 		},
 		{
 			"name": "Send Conatct us Message",
@@ -5344,129 +5445,6 @@
 				"description": "Register a New Client with The Regular Way"
 			},
 			"response": []
-		},
-		{
-			"name": "Activate User",
-			"id": "da2f1749-a5d9-4f00-9a14-2dd64ce17cda",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-					},
-					{
-						"key": "X-localization",
-						"value": "en"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "verification_code",
-							"value": "1234",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{arayaf}}/auth/activate",
-					"host": [
-						"{{arayaf}}"
-					],
-					"path": [
-						"auth",
-						"activate"
-					]
-				},
-				"description": "Activate User"
-			},
-			"response": [
-				{
-					"id": "bbd1ab1f-4394-450d-9550-7db9ac440354",
-					"name": "Activate User",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-							},
-							{
-								"key": "X-localization",
-								"value": "en"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "verification_code",
-									"value": "1234",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/auth/activate",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"auth",
-								"activate"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 10 Jan 2019 01:36:55 +0000"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 10 Jan 2019 01:36:55 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "60"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "58"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"value\": true,\n    \"data\": \"Your Account Has been Confirmed Successfully\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
-				}
-			]
 		}
 	],
 	"auth": {
