@@ -511,7 +511,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "01157569282",
+									"value": "01157569286",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -5298,6 +5298,112 @@
 				}
 			],
 			"id": "1b17e378-7029-418b-94f6-ea869591f4d9"
+		},
+		{
+			"name": "New",
+			"item": [
+				{
+					"name": "all-news",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ea583ad9-7574-4617-b41b-4439b326401b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/news",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"news"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Register a New Client with The Regular Way"
+					},
+					"response": []
+				}
+			],
+			"id": "d3d13107-7c23-4168-94a5-9841242047dc"
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "toggle-favorite-unfavorite",
+					"id": "53209e6e-cab1-4808-bd0a-414b90d954a7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/favorites/:product/toggle",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"favorites",
+								":product",
+								"toggle"
+							],
+							"variable": [
+								{
+									"key": "product",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-product-favorites",
+					"id": "a527bb7c-9cc2-43ab-a835-06b31fd62ed0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/favorites",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "abb0aa69-3192-431d-8ba9-50e5bb5bd8d7"
 		},
 		{
 			"name": "Send Conatct us Message",
