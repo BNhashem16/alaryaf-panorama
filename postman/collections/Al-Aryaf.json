@@ -1622,12 +1622,24 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/products",
+							"raw": "{{ALARYAF_URL}}/products?limit=40&page=1",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
 								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text"
+								}
 							]
 						},
 						"description": "Get Product Details - product id- Can Change Lanugae using X-localization"
@@ -1706,16 +1718,16 @@
 			"id": "ce1fc5ef-154a-4039-9e5a-c2ecffcb0ebc"
 		},
 		{
-			"name": "Favourites",
+			"name": "Cart",
 			"item": [
 				{
-					"name": "User Favourite Produts",
-					"id": "657bff6d-fcf5-4772-8285-25998c20cb0d",
+					"name": "add-Item-to-cart",
+					"id": "4b3384e6-fc65-46d4-9d93-77d235865d32",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "X-localization",
@@ -1723,27 +1735,48 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
 							}
 						],
-						"url": {
-							"raw": "{{arayaf}}/user/favourites",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"user",
-								"favourites"
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "product_unit_item_id",
+									"value": "160",
+									"type": "text"
+								}
 							]
 						},
-						"description": "User Favourite Produts"
+						"url": {
+							"raw": "{{ALARYAF_URL}}/carts/:product_id",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"carts",
+								":product_id"
+							],
+							"variable": [
+								{
+									"key": "product_id",
+									"value": "190"
+								}
+							]
+						},
+						"description": "Add  Single Product To Cart - Product ID"
 					},
 					"response": [
 						{
-							"id": "d0fac16d-df29-442e-81fe-d2c25c9828aa",
-							"name": "User Favourite Produts",
+							"id": "07bdb3f2-d9ce-42fb-bc4a-155a948dbf16",
+							"name": "Add Item To Cart",
 							"originalRequest": {
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
 										"key": "X-localization",
@@ -1751,121 +1784,32 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
 									}
 								],
-								"url": {
-									"raw": "{{arayaf}}/user/favourites",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"favourites"
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "price",
+											"value": "30",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "3",
+											"type": "text"
+										}
 									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
 								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:27:07 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:27:07 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": true,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \" مرة واحد عداه العيب خد اللي بعده.\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Favourite a Product",
-					"id": "5ab08cd8-59de-423c-bb20-622d2dfad03f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/user/favourites/1",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"user",
-								"favourites",
-								"1"
-							]
-						},
-						"description": "Favourite a Product By Place Id"
-					},
-					"response": [
-						{
-							"id": "c8518018-2267-4c44-9564-8ebe3b70b75c",
-							"name": "Favourite a Product",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
-									}
-								],
 								"url": {
-									"raw": "{{arayaf}}/user/favourites/1",
+									"raw": "{{arayaf}}/cart/add/1",
 									"host": [
 										"{{arayaf}}"
 									],
 									"path": [
-										"user",
-										"favourites",
+										"cart",
+										"add",
 										"1"
 									]
 								}
@@ -1880,116 +1824,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:26:43 +0000"
+									"value": "Sat, 12 Jan 2019 23:32:15 +0000"
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:26:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"تم اضافه المنتج الى المفضلة بنجاح\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
-						}
-					]
-				},
-				{
-					"name": "UnFavourite a Product",
-					"id": "d22cbd52-17ed-44eb-ac58-da233d388a71",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/user/favourites/1",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"user",
-								"favourites",
-								"1"
-							]
-						},
-						"description": "UnFavourite a Product With Product ID"
-					},
-					"response": [
-						{
-							"id": "88ad5924-72a1-42aa-a25c-72f4689de5a5",
-							"name": "UnFavourite a Product",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA5MDY1NywibmJmIjoxNTQ3MDkwNjU3LCJqdGkiOiJoVXpEZFFRUHBGakttVGJRIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.drGFH-QtiYMu11M5Hee7WP7zs3X4NKPt94r5pqitGI8"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/user/favourites/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"favourites",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:28:25 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:28:25 GMT"
+									"value": "Sat, 12 Jan 2019 23:32:15 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2017,65 +1856,33 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"value\": false,\n    \"msg\": \"تم حذف المنتج من المفضلة بنجاح\",\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
+							"body": "{\n    \"value\": true,\n    \"data\": \"تم اضافه طلبك الى سله هذا المتجر بنجاح\",\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
 						}
 					]
-				}
-			],
-			"id": "9a06986a-d2e8-4420-86d6-fe767c5fbb52"
-		},
-		{
-			"name": "Cart",
-			"item": [
+				},
 				{
-					"name": "Add Item To Cart",
-					"id": "4b3384e6-fc65-46d4-9d93-77d235865d32",
+					"name": "show-cart",
+					"id": "6e2837f6-fd16-4c7b-a2c8-c241183043b2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "price",
-									"value": "30",
-									"type": "text"
-								},
-								{
-									"key": "quantity",
-									"value": "3",
-									"type": "text"
-								}
-							]
-						},
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/cart/add/1",
+							"raw": "{{ALARYAF_URL}}/carts",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"cart",
-								"add",
-								"1"
+								"carts"
 							]
 						},
 						"description": "Add  Single Product To Cart - Product ID"
 					},
 					"response": [
 						{
-							"id": "07bdb3f2-d9ce-42fb-bc4a-155a948dbf16",
+							"id": "ef1f5c0e-e6e2-40b6-86f6-bc2f80eec58f",
 							"name": "Add Item To Cart",
 							"originalRequest": {
 								"method": "POST",
@@ -3266,23 +3073,14 @@
 					]
 				},
 				{
-					"name": "Submit Adrees To Cart",
+					"name": "update-cart-address",
 					"id": "0f7af575-9038-44c7-8dff-d3b9374168d8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -3325,12 +3123,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{arayaf}}/cart/address",
+							"raw": "{{ALARYAF_URL}}/carts/address",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"cart",
+								"carts",
 								"address"
 							]
 						},
@@ -3593,32 +3391,29 @@
 					]
 				},
 				{
-					"name": "Delete Product From Cart By  (Item ID)",
+					"name": "delete-product-from-cart",
 					"id": "a70e6de9-bdb7-4d86-b2ef-66d29bfd1a00",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ0NDc1NTMxLCJleHAiOjE1NDU2ODUxMzEsIm5iZiI6MTU0NDQ3NTUzMSwianRpIjoiZDRGNWhvUmJUY2hPSVVqUSIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.uYOz80QeSr16WbtZE5I2BQut3lMEqQiYiLGLJr8RtPY"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/cart/destroy/2",
+							"raw": "{{ALARYAF_URL}}/carts/:cartI_tem_id/destroy",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"cart",
-								"destroy",
-								"2"
+								"carts",
+								":cartI_tem_id",
+								"destroy"
+							],
+							"variable": [
+								{
+									"key": "cartI_tem_id",
+									"value": "2"
+								}
 							]
 						},
 						"description": "Delete Current User Cart Item | Cart ID"
@@ -3711,31 +3506,21 @@
 					]
 				},
 				{
-					"name": "Delete Current Cart",
+					"name": "delete-cart",
 					"id": "3a508ac2-f906-42d8-96ab-b43d7d06de97",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ0NDc1NTMxLCJleHAiOjE1NDU2ODUxMzEsIm5iZiI6MTU0NDQ3NTUzMSwianRpIjoiZDRGNWhvUmJUY2hPSVVqUSIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.uYOz80QeSr16WbtZE5I2BQut3lMEqQiYiLGLJr8RtPY"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{arayaf}}/cart/destroy",
+							"raw": "{{ALARYAF_URL}}/carts",
 							"host": [
-								"{{arayaf}}"
+								"{{ALARYAF_URL}}"
 							],
 							"path": [
-								"cart",
-								"destroy"
+								"carts"
 							]
 						},
 						"description": "Delete Current User Cart"
@@ -5350,7 +5135,7 @@
 			"id": "d3d13107-7c23-4168-94a5-9841242047dc"
 		},
 		{
-			"name": "Favourites",
+			"name": "Favourite",
 			"item": [
 				{
 					"name": "toggle-favorite-unfavorite",
