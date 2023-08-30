@@ -402,7 +402,7 @@
 							"formdata": [
 								{
 									"key": "phone",
-									"value": "01157569289",
+									"value": "01111111111",
 									"description": "required",
 									"type": "text"
 								},
@@ -511,7 +511,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "01157569286",
+									"value": "01157569210",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -543,6 +543,12 @@
 									"key": "image",
 									"type": "file",
 									"src": "/C:/Users/ahmedmohammed/Pictures/Screenshots/Screenshot 2023-05-24 160020.png"
+								},
+								{
+									"key": "role",
+									"value": "representative",
+									"description": "representative, client",
+									"type": "text"
 								}
 							]
 						},
@@ -4749,11 +4755,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/orders?limit=20&order_status=approved",
+							"raw": "{{ALARYAF_URL}}/representative/orders?limit=20",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
+								"representative",
 								"orders"
 							],
 							"query": [
@@ -4764,7 +4771,8 @@
 								{
 									"key": "order_status",
 									"value": "approved",
-									"description": "approved, pending, is_delivered"
+									"description": "approved, pending, is_delivered",
+									"disabled": true
 								}
 							]
 						},
@@ -4793,11 +4801,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{ALARYAF_URL}}/orders/:order_id/change-status",
+							"raw": "{{ALARYAF_URL}}/representative/orders/:order_id/change-status",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
+								"representative",
 								"orders",
 								":order_id",
 								"change-status"
@@ -4805,7 +4814,7 @@
 							"variable": [
 								{
 									"key": "order_id",
-									"value": "12"
+									"value": "1"
 								}
 							]
 						},
