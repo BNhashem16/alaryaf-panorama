@@ -8,281 +8,6 @@
 	},
 	"item": [
 		{
-			"name": "Chat",
-			"item": [
-				{
-					"name": "Check Chat Details",
-					"id": "a6780df3-3d19-4a7a-a8a4-498cdffc4fc7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzcxNTA0NiwibmJmIjoxNTQ3NzE1MDQ2LCJqdGkiOiJ2V0ZZNHVHVmx0Q1ZManB2Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Ffz1JvFQ8A5a1nSib67jpZig7C5KvjsJ3XLmJSP8ZGE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "en"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTU0Njg2Mzg4NywiZXhwIjoxNTQ4MDczNDg4LCJuYmYiOjE1NDY4NjM4ODgsImp0aSI6IkxoZWxCNXh5dXRzMFdCeUQiLCJzdWIiOjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.GxnFz1-bne6EFDDX63BusiIFP0MDMWHKOeae3m_pScU"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/check_chat",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"check_chat"
-							]
-						},
-						"description": "Check Chat Details"
-					},
-					"response": []
-				},
-				{
-					"name": "Ad New Message With Channel ID",
-					"id": "654ac356-cedf-49ab-a147-c8fbafb73a35",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzcxNTA0NiwibmJmIjoxNTQ3NzE1MDQ2LCJqdGkiOiJ2V0ZZNHVHVmx0Q1ZManB2Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Ffz1JvFQ8A5a1nSib67jpZig7C5KvjsJ3XLmJSP8ZGE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTU0Njg2Mzg4NywiZXhwIjoxNTQ4MDczNDg4LCJuYmYiOjE1NDY4NjM4ODgsImp0aSI6IkxoZWxCNXh5dXRzMFdCeUQiLCJzdWIiOjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.GxnFz1-bne6EFDDX63BusiIFP0MDMWHKOeae3m_pScU"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "body",
-									"value": "هولا",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/chats/1",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"chats",
-								"1"
-							]
-						},
-						"description": "Ad New Message With Channel ID"
-					},
-					"response": [
-						{
-							"id": "da27f358-5c0d-44d3-94a0-9f4cb5a6b77d",
-							"name": "Ad New Message With Channel ID",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTU0Njg2Mzg4NywiZXhwIjoxNTQ4MDczNDg4LCJuYmYiOjE1NDY4NjM4ODgsImp0aSI6IkxoZWxCNXh5dXRzMFdCeUQiLCJzdWIiOjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.GxnFz1-bne6EFDDX63BusiIFP0MDMWHKOeae3m_pScU"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "body",
-											"value": "هولا",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/chats/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"chats",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 09:05:27 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 09:05:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"تم ارسال  رسالتك بنجاح\",\n    \"comment\": \"الباشا من هيبته بيتشتم في غيبته .\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get  Authenticated User Chats Details By Channel ID",
-					"id": "534ed4c6-a803-4432-a1a4-4a595eddb996",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzcxNTA0NiwibmJmIjoxNTQ3NzE1MDQ2LCJqdGkiOiJ2V0ZZNHVHVmx0Q1ZManB2Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Ffz1JvFQ8A5a1nSib67jpZig7C5KvjsJ3XLmJSP8ZGE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "en"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/chats",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"chats"
-							]
-						},
-						"description": "Get  Authenticated User Chats Details By Channel ID"
-					},
-					"response": [
-						{
-							"id": "eeb9e33f-68a6-452e-b578-3f7167d96f31",
-							"name": "Get  Authenticated User Chats Details By Channel ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/chats",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"chats"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 09:05:38 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 09:05:38 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"messages\": [\n            {\n                \"id\": 3,\n                \"body\": \"هولا\",\n                \"user_name\": \"Moustafa\",\n                \"user_id\": 2,\n                \"self\": true,\n                \"date\": \"2019-01-17\"\n            },\n            {\n                \"id\": 2,\n                \"body\": \"صورة عقد\",\n                \"user_name\": \"Moustafa\",\n                \"user_id\": 2,\n                \"self\": true,\n                \"date\": \"2019-01-17\"\n            },\n            {\n                \"id\": 1,\n                \"body\": \"صورة عقد\",\n                \"user_name\": \"Moustafa\",\n                \"user_id\": 2,\n                \"self\": true,\n                \"date\": \"2019-01-17\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 3,\n            \"count\": 3,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
-						}
-					]
-				}
-			],
-			"id": "9cabe96e-e911-4157-8681-30aede403c24"
-		},
-		{
 			"name": "Auth",
 			"item": [
 				{
@@ -716,801 +441,10 @@
 						},
 						"description": "Activate User"
 					},
-					"response": [
-						{
-							"id": "bbd1ab1f-4394-450d-9550-7db9ac440354",
-							"name": "Activate User",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									},
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "verification_code",
-											"value": "1234",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/activate",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"activate"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:36:55 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:36:55 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"Your Account Has been Confirmed Successfully\",\n    \"comment\": \"·لو صاحبك خانك اعتبره دخانك\"\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "974db5ae-0ba2-415d-b3a9-b19b76281737"
-		},
-		{
-			"name": "General",
-			"item": [
-				{
-					"name": "Show About Page",
-					"id": "84884cf5-8068-431b-821e-e3df6b60da78",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/about",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"about"
-							]
-						},
-						"description": "Show About Page - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "ae048719-e053-4a39-9835-7b0037c6ef33",
-							"name": "Show About Page",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/about",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"about"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:44:27 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:44:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.\\r\\n\\r\\n\",\n    \"comment\": \"حتى هدف حياتي ، طلع تسلل    \"\n}"
-						}
-					]
-				},
-				{
-					"name": "Show Terms Page",
-					"id": "8e9a6626-16c0-4991-9686-48d40505b36f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/terms",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"terms"
-							]
-						},
-						"description": "Show Terms Page - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "d7f58afd-f407-4bb3-af71-4efd386488c8",
-							"name": "Show Terms Page",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/terms",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"terms"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:46:40 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:46:40 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": \"هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.\\r\\n\\r\\n\",\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Categories",
-					"id": "51130b49-f080-46b5-8fc0-41c0764b2624",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"url": {
-							"raw": "{{aryaf}}/categories",
-							"host": [
-								"{{aryaf}}"
-							],
-							"path": [
-								"categories"
-							]
-						},
-						"description": "Get All Categories - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "f13757ec-f419-4228-94a6-2d8b35561db9",
-							"name": "Get All Categories",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"url": {
-									"raw": "{{aryaf}}/categories",
-									"host": [
-										"{{aryaf}}"
-									],
-									"path": [
-										"categories"
-									]
-								},
-								"description": "Get All Categories - No Params - Can Change Lanugae using X-localization"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "cache-control",
-									"value": "no-cache, private",
-									"name": "cache-control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "connection",
-									"value": "close",
-									"name": "connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json",
-									"name": "content-type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "date",
-									"value": "Wed, 19 Dec 2018 20:51:40 +0000, Wed, 19 Dec 2018 20:51:40 GMT",
-									"name": "date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "host",
-									"value": "127.0.0.1:8000",
-									"name": "host",
-									"description": "Custom header"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1",
-									"name": "x-powered-by",
-									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-								},
-								{
-									"key": "x-ratelimit-limit",
-									"value": "60",
-									"name": "x-ratelimit-limit",
-									"description": "Custom header"
-								},
-								{
-									"key": "x-ratelimit-remaining",
-									"value": "59",
-									"name": "x-ratelimit-remaining",
-									"description": "Custom header"
-								}
-							],
-							"cookie": [],
-							"body": "{\"value\":true,\"data\":{\"categories\":[{\"id\":1,\"name\":\"\\u0634\\u0627\\u0644\\u064a\\u0647\\u0627\\u062a\",\"description\":\"\\u0643\\u0644 \\u0627\\u0644\\u0634\\u0627\\u0644\\u0647\\u064a\\u0627\\u062a\",\"image\":\"http:\\/\\/127.0.0.1:8000\\/storage\\/\\/photos\\/shalih.png\"},{\"id\":2,\"name\":\"\\u0627\\u0633\\u062a\\u0631\\u0627\\u062d\\u0627\\u062a\",\"description\":\"\\u0645\\u062a\\u0648\\u0641\\u0631 \\u0643\\u0644 \\u0627\\u0644\\u0627\\u0633\\u062a\\u0631\\u0627\\u062d\\u0627\\u062a\",\"image\":\"http:\\/\\/127.0.0.1:8000\\/storage\\/\\/photos\\/shalih.png\"}],\"paginate\":{\"total\":2,\"count\":2,\"per_page\":10,\"next_page_url\":null,\"prev_page_url\":null,\"current_page\":1,\"total_pages\":1}},\"comment\":\"\\u0644\\u0648 \\u0634\\u0641\\u062a \\u0627\\u0644\\u0631\\u0633\\u0627\\u0644\\u0647 \\u062f\\u064a \\u0645\\u0639\\u0646\\u0627\\u0647\\u0627 \\u0627\\u0646 \\u0627\\u0644\\u0628\\u0627\\u0643 \\u0627\\u0646\\u062f \\u0632\\u064a \\u0627\\u0644\\u0641\\u0644 \\u0648\\u0627\\u064a \\u0645\\u0634\\u0643\\u0644\\u0647 \\u0645\\u0634 \\u062a\\u0628\\u0639\\u064a \"}"
-						}
-					]
-				},
-				{
-					"name": "Get All Branches",
-					"id": "9b4826e3-5411-411c-9580-1ad23fb74a08",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/branches",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"branches"
-							]
-						},
-						"description": "Get All Branches - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "d29b8d00-4fc8-4a2c-9e95-a95305c5f8ca",
-							"name": "Get All Branches",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/branches",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"branches"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:50:56 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:50:56 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"branches\": [\n            {\n                \"id\": 1,\n                \"name\": \"الفرع رقم1\",\n                \"description\": \"وصف \",\n                \"lat\": \"17.0132\",\n                \"long\": \"18.213\",\n                \"landline\": \"05516413\",\n                \"mobile\": \"0132465465645\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/far3.png\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \" مرة واحد عداه العيب خد اللي بعده.\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Banners",
-					"id": "092ca53c-b59f-4da9-8b35-4cb0dc0eef01",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/banners",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"banners"
-							]
-						},
-						"description": "Get All Branches - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "40285218-874b-4a41-94fb-b4638d43db7f",
-							"name": "Get All Branches",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/branches",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"branches"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:50:56 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:50:56 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"branches\": [\n            {\n                \"id\": 1,\n                \"name\": \"الفرع رقم1\",\n                \"description\": \"وصف \",\n                \"lat\": \"17.0132\",\n                \"long\": \"18.213\",\n                \"landline\": \"05516413\",\n                \"mobile\": \"0132465465645\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/far3.png\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \" مرة واحد عداه العيب خد اللي بعده.\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Branches Without Pagination",
-					"id": "15656268-7a4c-4932-a0af-fa27a1ae4c3e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/all_branches",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"all_branches"
-							]
-						},
-						"description": "Get All Branches - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "7cb738a0-f672-49ba-9f97-d35f976cb321",
-							"name": "Get All Branches Without Pagination",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/all_branches",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"all_branches"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 14 Jan 2019 13:58:12 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 14 Jan 2019 13:58:12 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"الفرع رقم1\",\n            \"description\": \"وصف \",\n            \"lat\": \"17.0132\",\n            \"long\": \"18.213\",\n            \"landline\": \"05516413\",\n            \"mobile\": \"0132465465645\",\n            \"image\": \"http://127.0.0.1:8000/storage/photos/far3.png\"\n        }\n    ],\n    \"comment\": \"حتى هدف حياتي ، طلع تسلل    \"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Media",
-					"id": "de100b6c-9afa-486f-a2b6-f569165bf192",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"url": {
-							"raw": "{{arayaf}}/media",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"media"
-							]
-						},
-						"description": "Get All Media - No Params - Can Change Lanugae using X-localization"
-					},
-					"response": [
-						{
-							"id": "92e069a6-ff26-47d8-953c-eea20d4f8938",
-							"name": "Get All Branches Media",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/media",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"media"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:57:13 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:57:13 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"media\": [\n            {\n                \"id\": 1,\n                \"name\": \"صورة للفرع\",\n                \"description\": \"وصف \",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image.png\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"لو شفت الرساله دي معناها ان الباك اند زي الفل واي مشكله مش تبعي \"\n}"
-						}
-					]
-				}
-			],
-			"id": "b5e811e2-fef3-4c8a-9152-e4f0e67519ca"
 		},
 		{
 			"name": "Product",
@@ -1545,75 +479,7 @@
 						},
 						"description": "Get Product Details - product id- Can Change Lanugae using X-localization"
 					},
-					"response": [
-						{
-							"id": "74fc9416-90b2-40f0-a692-b97d7f6ae9c2",
-							"name": "Get Product Details By product id",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/products/single/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"products",
-										"single",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:06:26 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:06:26 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"منتج رقم 1\",\n        \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\",\n        \"gallery\": [\n            {\n                \"id\": 1,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image.png\"\n            },\n            {\n                \"id\": 2,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image2.png\"\n            }\n        ],\n        \"price\": 300,\n        \"description\": \"وصف المنتج\",\n        \"components\": \"مكونات طبيعية\",\n        \"rates\": [\n            {\n                \"id\": 1,\n                \"comment\": \"منتج متوسط\",\n                \"user\": \"Moustafa\",\n                \"user_image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n                \"rate\": 3\n            }\n        ],\n        \"rate\": 3,\n        \"is_liked\": false,\n        \"discount\": {\n            \"has_discount\": true,\n            \"price_after_discount\": 270\n        }\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "all-products",
@@ -1650,75 +516,7 @@
 						},
 						"description": "Get Product Details - product id- Can Change Lanugae using X-localization"
 					},
-					"response": [
-						{
-							"id": "1341c91d-8c75-4930-85bd-8544532cb279",
-							"name": "Get Product Details By product id",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/products/single/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"products",
-										"single",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:06:26 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 03:06:26 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"منتج رقم 1\",\n        \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\",\n        \"gallery\": [\n            {\n                \"id\": 1,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image.png\"\n            },\n            {\n                \"id\": 2,\n                \"image\": \"http://127.0.0.1:8000/storage/photos/image2.png\"\n            }\n        ],\n        \"price\": 300,\n        \"description\": \"وصف المنتج\",\n        \"components\": \"مكونات طبيعية\",\n        \"rates\": [\n            {\n                \"id\": 1,\n                \"comment\": \"منتج متوسط\",\n                \"user\": \"Moustafa\",\n                \"user_image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n                \"rate\": 3\n            }\n        ],\n        \"rate\": 3,\n        \"is_liked\": false,\n        \"discount\": {\n            \"has_discount\": true,\n            \"price_after_discount\": 270\n        }\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "ce1fc5ef-154a-4039-9e5a-c2ecffcb0ebc"
@@ -1957,60 +755,6 @@
 					"response": []
 				},
 				{
-					"name": "Submit Cart - Pay",
-					"id": "3fe103aa-926c-479d-82a2-50608f6e09c2",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "payment_way",
-									"value": "cash",
-									"description": "or online",
-									"type": "text"
-								},
-								{
-									"key": "is_coupon",
-									"value": "1",
-									"description": "to use wallet or not",
-									"type": "text"
-								},
-								{
-									"key": "copon",
-									"value": "dsasad",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/cart/pay",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"cart",
-								"pay"
-							]
-						},
-						"description": "Submit Adrees To Cart"
-					},
-					"response": []
-				},
-				{
 					"name": "delete-product-from-cart",
 					"id": "a70e6de9-bdb7-4d86-b2ef-66d29bfd1a00",
 					"protocolProfileBehavior": {
@@ -2116,357 +860,6 @@
 			"id": "d1c7b521-5d18-4869-87d0-c8ca660f9077"
 		},
 		{
-			"name": "Search",
-			"item": [
-				{
-					"name": "Category Search",
-					"id": "3b3ea59c-bdb2-4868-8d99-daf75d76235f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "text",
-									"value": "ا",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/search/category",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"search",
-								"category"
-							]
-						},
-						"description": "Category Search"
-					},
-					"response": [
-						{
-							"id": "7036b6b4-faf1-4dfc-97bc-1a6193f08580",
-							"name": "Category Search",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "text",
-											"value": "ا",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/search/category",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"search",
-										"category"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:44:24 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:44:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 1\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"لو شفت الرساله دي معناها ان الباك اند زي الفل واي مشكله مش تبعي \"\n}"
-						}
-					]
-				},
-				{
-					"name": "Sub Category Search",
-					"id": "445a73a6-c798-4d44-8a3d-d9d7ba989449",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "text",
-									"value": "ت",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/search/sub_category",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"search",
-								"sub_category"
-							]
-						},
-						"description": "Category Search"
-					},
-					"response": [
-						{
-							"id": "94f11df6-30f6-4ffa-adb9-618390cb23d4",
-							"name": "Sub Category Search",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "text",
-											"value": "ت",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/search/sub_category",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"search",
-										"sub_category"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:45:12 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:45:12 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "54"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"تورت\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/tort.png\",\n                \"product_count\": 1\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \" واحد اتجوز واحدة اسمها نعمة باسها وش و ضهر.\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Products Search",
-					"id": "6eae56d5-bf83-4db9-aec4-da3eed6617cd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "text",
-									"value": "م",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{arayaf}}/search/products",
-							"host": [
-								"{{arayaf}}"
-							],
-							"path": [
-								"search",
-								"products"
-							]
-						},
-						"description": "Products Search"
-					},
-					"response": [
-						{
-							"id": "b252cf54-9e0e-4d8d-ac4e-732c3c76cb52",
-							"name": "Products Search",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlclwvY2xpZW50IiwiaWF0IjoxNTQ1MjUwMTQxLCJleHAiOjE1NDY0NTk3NDIsIm5iZiI6MTU0NTI1MDE0MiwianRpIjoiSTJKeTBVWWNsN052eUpQRiIsInN1YiI6OCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.BE1deXCodQuHsAbWqKoSBUOGY_ipXkOl59RXQsdbNcc"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "text",
-											"value": "م",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/search/products",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"search",
-										"products"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:46:35 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 17 Jan 2019 08:46:35 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": false,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
-						}
-					]
-				}
-			],
-			"id": "69da47c4-5b32-422b-abdf-a87e6dce4302"
-		},
-		{
 			"name": "Profile",
 			"item": [
 				{
@@ -2524,122 +917,7 @@
 						},
 						"description": "Update a Client with The Regular Way"
 					},
-					"response": [
-						{
-							"id": "0496c175-f20e-47ed-ab35-25c5b127fc0b",
-							"name": "Update  User Profile",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Moustafa",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "moustafa@fmoustafa.com",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "fcm_token_android",
-											"value": "454sda",
-											"type": "text"
-										},
-										{
-											"key": "fcm_token_ios",
-											"value": "454sda",
-											"type": "text"
-										},
-										{
-											"key": "lat",
-											"value": "17.0.1",
-											"type": "text"
-										},
-										{
-											"key": "long",
-											"value": "18.10",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/user/update/profile",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"update",
-										"profile"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:30:50 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:30:50 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM4NTAsIm5iZiI6MTU0NzA4Mzg1MCwianRpIjoieUxuenVqRkFpZWg3WERHMCIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.d9G1GgTawk7u6UWk-E5fu20lpYPZKsXcKZYgAUujWdU\"\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "update-password",
@@ -2688,97 +966,7 @@
 						},
 						"description": "Update a Client with The Regular Way"
 					},
-					"response": [
-						{
-							"id": "f62e670d-3a38-46f6-8097-722b57acb9fa",
-							"name": "Update Password",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									},
-									{
-										"key": "Authorization",
-										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzA4MzY0NiwibmJmIjoxNTQ3MDgzNjQ2LCJqdGkiOiI4R3dpODhaWGpXbEw2bUtVIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.DUFkoBZDOvS9oy25n9zweDbdZG6lXdrm2xUbCEh7_3Y"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "old_password",
-											"value": "asd123",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "asd123"
-										},
-										{
-											"key": "password_confirmation",
-											"value": "asd123"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/user/update/profile",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"update",
-										"profile"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:29:22 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:29:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "58"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Moustafa\",\n        \"email\": \"moustafa@fmoustafa.com\",\n        \"phone\": \"011552765861\",\n        \"is_verified\": 0,\n        \"is_active\": 1,\n        \"image\": \"http://127.0.0.1:8000/storage/photos/user.png\",\n        \"lat\": \"17.0.1\",\n        \"long\": \"18.10\",\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC91c2VyXC91cGRhdGVcL3Byb2ZpbGUiLCJpYXQiOjE1NDcwODM3NjIsIm5iZiI6MTU0NzA4Mzc2MiwianRpIjoiU1RjR2NiTTNlajBWNVlxNiIsInN1YiI6MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.LOohAXe_i_KDyccsCK49KdgMR7AcfLmc3xacn28uYCw\"\n    },\n    \"comment\": \" فرخة استحمت بهد اند شولدر باضت بيضة من غير قشره.\"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "show-profile",
@@ -2799,74 +987,44 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"id": "3251391f-7a5d-482c-82f7-823c0614f370",
-							"name": "Get User Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/user/info",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"user",
-										"info"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 15 Jan 2019 13:10:15 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 15 Jan 2019 13:10:15 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "57"
-								}
+					"response": []
+				},
+				{
+					"name": "show-orders",
+					"id": "0ebe7109-9964-418e-b7ac-3d46332eb40a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/orders?limit&status=opening&payment_way=online",
+							"host": [
+								"{{ALARYAF_URL}}"
 							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"unread_notification\": 0,\n        \"wallet\": 5,\n        \"cart_items\": 1\n    },\n    \"comment\": \"الكار دا مش كارنا بس ربنا يصبرنا \"\n}"
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "status",
+									"value": "opening",
+									"description": "opening, on_processing, prepared, refused, on_delivery, received, not_received"
+								},
+								{
+									"key": "payment_way",
+									"value": "online",
+									"description": "cash, online"
+								}
+							]
 						}
-					]
+					},
+					"response": []
 				}
 			],
 			"id": "182dd59f-fe71-4456-ba92-cff0a7d43208"
@@ -2887,7 +1045,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories?limit=20&page=1",
+							"raw": "{{ALARYAF_URL}}/categories?limit=20&page=1&name=Judy Green",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -2902,78 +1060,16 @@
 								{
 									"key": "page",
 									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "Judy Green"
 								}
 							]
 						},
 						"description": "Show All Categories - No Params - Can Change Lanugae using X-localization"
 					},
-					"response": [
-						{
-							"id": "3994dc9e-5e56-4d8f-92a2-c5ed8e3caf05",
-							"name": "Get All Categories",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/categories",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"categories"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "children-of-parent-category",
@@ -2988,7 +1084,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories/:category/children?limit=2&page=1",
+							"raw": "{{ALARYAF_URL}}/categories/:category/children?limit=2&page=1&name=Randall Boehm",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -3005,6 +1101,11 @@
 								{
 									"key": "page",
 									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "Randall Boehm",
+									"type": "text"
 								}
 							],
 							"variable": [
@@ -3016,73 +1117,7 @@
 						},
 						"description": "Show All Categories - No Params - Can Change Lanugae using X-localization"
 					},
-					"response": [
-						{
-							"id": "cbb9d4a0-dd47-41fb-90ce-d7e0bc056845",
-							"name": "Get All Categories",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/categories",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"categories"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:16:07 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 2,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"حلويات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/7lwyat.png\",\n                \"product_count\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مقرمشات\",\n                \"image\": \"http://127.0.0.1:8000/storage/photos/mokrmshat.png\",\n                \"product_count\": 0\n            }\n        ],\n        \"paginate\": {\n            \"total\": 2,\n            \"count\": 2,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"مفيش فايدة\"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "products-of-sub-category",
@@ -3097,7 +1132,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories/:sub_category/products",
+							"raw": "{{ALARYAF_URL}}/categories/:sub_category/products?name=Esther Kemmer",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -3106,83 +1141,22 @@
 								":sub_category",
 								"products"
 							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Esther Kemmer"
+								}
+							],
 							"variable": [
 								{
 									"key": "sub_category",
-									"value": "51"
+									"value": "11"
 								}
 							]
 						},
 						"description": "Get All Products - Sub category ID- Can Change Lanugae using X-localization"
 					},
-					"response": [
-						{
-							"id": "4bdc8301-8abf-43ee-98b2-2b870ec9e5b4",
-							"name": "Get All Products By Sub category ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "ar"
-									}
-								],
-								"url": {
-									"raw": "{{arayaf}}/products/1",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"products",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 02:56:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"total\": 1,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"منتج رقم 1\",\n                \"description\": \"وصف المنتج\",\n                \"price\": 300,\n                \"is_liked\": false,\n                \"discount\": {\n                    \"has_discount\": true,\n                    \"price_after_discount\": \"270.00\"\n                },\n                \"image\": \"http://127.0.0.1:8000/storage/photos/cake.pgp\"\n            }\n        ],\n        \"paginate\": {\n            \"total\": 1,\n            \"count\": 1,\n            \"per_page\": 10,\n            \"next_page_url\": null,\n            \"prev_page_url\": null,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    },\n    \"comment\": \"صاحب صاحبك على عيبه ومتصاحبش اللى فى جيبه\"\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "b4fd80ba-a540-40a2-ab03-8061cf94b944"
@@ -3326,84 +1300,7 @@
 						},
 						"description": "Forget Password | Send Reset"
 					},
-					"response": [
-						{
-							"id": "7448eeb5-16e1-430c-809d-df2a8207d10e",
-							"name": "Forget Password | Send Reset",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/forget",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"forget"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:28 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"message\": \"Confirmation Code Has Been Sent Successfully to Your Phone\",\n        \"code\": 1234\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "send-otp",
@@ -3456,84 +1353,7 @@
 						},
 						"description": "Forget Password | Send Reset"
 					},
-					"response": [
-						{
-							"id": "21a4d831-5962-4013-a56a-9bb500e07ae5",
-							"name": "Forget Password | Send Reset",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-localization",
-										"value": "en"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "phone",
-											"value": "011552765861",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{arayaf}}/auth/forget",
-									"host": [
-										"{{arayaf}}"
-									],
-									"path": [
-										"auth",
-										"forget"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "127.0.0.1:8000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:28 +0000"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 10 Jan 2019 01:33:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.1.24-1+ubuntu16.04.1+deb.sury.org+1"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "60"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "59"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"value\": true,\n    \"data\": {\n        \"message\": \"Confirmation Code Has Been Sent Successfully to Your Phone\",\n        \"code\": 1234\n    },\n    \"comment\": \"انا عاوز بوست مان زي بتاعه أبوالنجا -اقوال مأثورة -   \"\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "1b17e378-7029-418b-94f6-ea869591f4d9"
@@ -3643,6 +1463,45 @@
 				}
 			],
 			"id": "abb0aa69-3192-431d-8ba9-50e5bb5bd8d7"
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "submit-payment",
+					"id": "3fe103aa-926c-479d-82a2-50608f6e09c2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "payment_way",
+									"value": "cash",
+									"description": "or online",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/payment",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"payment"
+							]
+						},
+						"description": "Submit Adrees To Cart"
+					},
+					"response": []
+				}
+			],
+			"id": "4c1c3645-0fb9-4f1f-8f35-b01e025d4552"
 		},
 		{
 			"name": "conatct-us",
