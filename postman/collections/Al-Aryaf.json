@@ -51,6 +51,39 @@
 					"response": []
 				},
 				{
+					"name": "delete-account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "327500f1-c32e-45ac-a283-2140a23ea6ad",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6add856f-98b8-4e28-b3d7-9315307a0855",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/delete-account",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"delete-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "login",
 					"event": [
 						{
@@ -127,7 +160,7 @@
 							"formdata": [
 								{
 									"key": "phone",
-									"value": "01111111111",
+									"value": "11111111111",
 									"description": "required",
 									"type": "text"
 								},
@@ -504,13 +537,11 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "40",
-									"type": "text"
+									"value": "40"
 								},
 								{
 									"key": "page",
-									"value": "1",
-									"type": "text"
+									"value": "1"
 								}
 							]
 						},
@@ -999,7 +1030,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/orders?limit&status=opening&payment_way=online",
+							"raw": "{{ALARYAF_URL}}/orders",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -1009,17 +1040,20 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": null
+									"value": null,
+									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "opening",
-									"description": "opening, on_processing, prepared, refused, on_delivery, received, not_received"
+									"description": "opening, on_processing, prepared, refused, on_delivery, received, not_received",
+									"disabled": true
 								},
 								{
 									"key": "payment_way",
 									"value": "online",
-									"description": "cash, online"
+									"description": "cash, online",
+									"disabled": true
 								}
 							]
 						}
@@ -1045,7 +1079,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories?limit=20&page=1&name=Judy Green",
+							"raw": "{{ALARYAF_URL}}/categories",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -1055,15 +1089,18 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "20"
+									"value": "20",
+									"disabled": true
 								},
 								{
 									"key": "page",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "name",
-									"value": "Judy Green"
+									"value": "Judy Green",
+									"disabled": true
 								}
 							]
 						},
@@ -1084,7 +1121,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories/:category/children?limit=2&page=1&name=Randall Boehm",
+							"raw": "{{ALARYAF_URL}}/categories/:category/children",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -1096,22 +1133,24 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "2"
+									"value": "2",
+									"disabled": true
 								},
 								{
 									"key": "page",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "name",
 									"value": "Randall Boehm",
-									"type": "text"
+									"disabled": true
 								}
 							],
 							"variable": [
 								{
 									"key": "category",
-									"value": "1"
+									"value": "9"
 								}
 							]
 						},
@@ -1120,7 +1159,7 @@
 					"response": []
 				},
 				{
-					"name": "products-of-sub-category",
+					"name": "products-of-category",
 					"id": "d5503b4a-67c3-426b-b43b-e4b967881106",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1132,25 +1171,26 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/categories/:sub_category/products?name=Esther Kemmer",
+							"raw": "{{ALARYAF_URL}}/categories/:category/products",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
 							"path": [
 								"categories",
-								":sub_category",
+								":category",
 								"products"
 							],
 							"query": [
 								{
 									"key": "name",
-									"value": "Esther Kemmer"
+									"value": "Esther Kemmer",
+									"disabled": true
 								}
 							],
 							"variable": [
 								{
-									"key": "sub_category",
-									"value": "11"
+									"key": "category",
+									"value": "13"
 								}
 							]
 						},
@@ -1433,7 +1473,7 @@
 							"variable": [
 								{
 									"key": "product",
-									"value": "20"
+									"value": "10"
 								}
 							]
 						}
@@ -1494,6 +1534,44 @@
 							],
 							"path": [
 								"payment"
+							]
+						},
+						"description": "Submit Adrees To Cart"
+					},
+					"response": []
+				},
+				{
+					"name": "check-total",
+					"id": "6b12328c-6b3a-4c0c-acb2-ff0223633b07",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "latitude",
+									"value": "23.8859",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "45.0792",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/payment/check-total",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"payment",
+								"check-total"
 							]
 						},
 						"description": "Submit Adrees To Cart"
@@ -1582,6 +1660,43 @@
 							"key": "limit",
 							"value": ""
 						}
+					]
+				},
+				"description": "Register a New Client with The Regular Way"
+			},
+			"response": []
+		},
+		{
+			"name": "details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "17f4a906-7fa2-421e-925d-c64d65e72412",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ALARYAF_URL}}/details",
+					"host": [
+						"{{ALARYAF_URL}}"
+					],
+					"path": [
+						"details"
 					]
 				},
 				"description": "Register a New Client with The Regular Way"
