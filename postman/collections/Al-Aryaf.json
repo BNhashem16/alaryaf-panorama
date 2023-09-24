@@ -160,13 +160,13 @@
 							"formdata": [
 								{
 									"key": "phone",
-									"value": "11111111111",
+									"value": "01157569210",
 									"description": "required",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "password",
+									"value": "123456",
 									"type": "text"
 								},
 								{
@@ -269,7 +269,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "01157569210",
+									"value": "0540845818",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -447,12 +447,12 @@
 							"formdata": [
 								{
 									"key": "code",
-									"value": "1234",
+									"value": "7606",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "01157569289",
+									"value": "0540845818",
 									"type": "text"
 								},
 								{
@@ -578,12 +578,12 @@
 							"formdata": [
 								{
 									"key": "quantity",
-									"value": "3",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "product_unit_item_id",
-									"value": "1",
+									"value": "4587",
 									"type": "text"
 								}
 							]
@@ -600,7 +600,7 @@
 							"variable": [
 								{
 									"key": "product_id",
-									"value": "1"
+									"value": "1012"
 								}
 							]
 						},
@@ -671,22 +671,13 @@
 					},
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "quantity",
-									"value": "3",
+									"value": "",
 									"type": "text"
 								},
 								{
@@ -708,80 +699,11 @@
 							"variable": [
 								{
 									"key": "cart_item",
-									"value": "1"
+									"value": ""
 								}
 							]
 						},
 						"description": "Edit Quantity of Cart Item - Product ID"
-					},
-					"response": []
-				},
-				{
-					"name": "update-cart-address",
-					"id": "0f7af575-9038-44c7-8dff-d3b9374168d8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "delivery_way",
-									"value": "store",
-									"description": "store  or home",
-									"type": "text"
-								},
-								{
-									"key": "address",
-									"value": "العنوان",
-									"type": "text"
-								},
-								{
-									"key": "lat",
-									"value": "17.01",
-									"type": "text"
-								},
-								{
-									"key": "long",
-									"value": "18.01",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "Moustafa",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "0123456456",
-									"type": "text"
-								},
-								{
-									"key": "notes",
-									"value": "ملاحظة لاي شئ 2",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "hashem@hashem.com",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{ALARYAF_URL}}/carts/address",
-							"host": [
-								"{{ALARYAF_URL}}"
-							],
-							"path": [
-								"carts",
-								"address"
-							]
-						},
-						"description": "Submit Adrees To Cart"
 					},
 					"response": []
 				},
@@ -850,6 +772,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -915,13 +840,15 @@
 									"key": "email",
 									"value": "test@gmail.com",
 									"description": "nullable",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "phone",
 									"value": "01157569289",
 									"description": "nullable",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "lat",
@@ -934,6 +861,11 @@
 									"value": "18.10",
 									"type": "text",
 									"description": "nullable"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ahmedmohammed/Pictures/Screenshots/Screenshot 2023-05-23 143355.png"
 								}
 							]
 						},
@@ -1045,7 +977,7 @@
 								},
 								{
 									"key": "status",
-									"value": "opening",
+									"value": "on_processing",
 									"description": "opening, on_processing, prepared, refused, on_delivery, received, not_received",
 									"disabled": true
 								},
@@ -1278,6 +1210,50 @@
 							]
 						},
 						"description": "Get All Areas - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": []
+				},
+				{
+					"name": "update-cart-live-lat-long",
+					"id": "0f7af575-9038-44c7-8dff-d3b9374168d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "live_lat",
+									"value": "17.01",
+									"type": "text"
+								},
+								{
+									"key": "live_long",
+									"value": "18.01",
+									"type": "text"
+								},
+								{
+									"key": "cart_address_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ALARYAF_URL}}/carts/address/live-lat-long",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"carts",
+								"address",
+								"live-lat-long"
+							]
+						},
+						"description": "Submit Adrees To Cart"
 					},
 					"response": []
 				}
@@ -1521,8 +1497,18 @@
 							"formdata": [
 								{
 									"key": "payment_way",
-									"value": "cash",
-									"description": "or online",
+									"value": "store",
+									"type": "text",
+									"description": "or online"
+								},
+								{
+									"key": "lat",
+									"value": "26.3592",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "43.9818",
 									"type": "text"
 								}
 							]
@@ -1553,13 +1539,43 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "latitude",
-									"value": "23.8859",
+									"key": "delivery_way",
+									"value": "store",
 									"type": "text"
 								},
 								{
-									"key": "longitude",
-									"value": "45.0792",
+									"key": "address",
+									"value": "العنوان",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "26.3592",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "43.9818",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Moustafa",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0123456456",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "ملاحظة لاي شئ 2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hashem@hashem.com",
 									"type": "text"
 								}
 							]
