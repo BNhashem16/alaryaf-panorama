@@ -160,19 +160,20 @@
 							"formdata": [
 								{
 									"key": "phone",
-									"value": "01157569210",
-									"description": "required",
+									"value": "01111111111",
+									"description": "required 0102117406",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123456",
+									"value": "pasword",
 									"type": "text"
 								},
 								{
 									"key": "fcm_token",
 									"value": "123456",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -256,7 +257,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "hashem",
+									"value": "hashem client",
 									"description": "required",
 									"type": "text"
 								},
@@ -269,44 +270,50 @@
 								},
 								{
 									"key": "phone",
-									"value": "0540845818",
+									"value": "044444444",
 									"description": "unique, required",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123456",
+									"value": "pasword",
 									"description": "required, min:6",
 									"type": "text"
 								},
 								{
 									"key": "password_confirmation",
-									"value": "123456",
+									"value": "pasword",
 									"description": "required",
 									"type": "text"
 								},
 								{
 									"key": "lat",
-									"value": "17.0.1",
+									"value": "30.044705117353175",
 									"description": "required",
 									"type": "text"
 								},
 								{
 									"key": "long",
-									"value": "18.10",
+									"value": "30.996759265234388",
 									"description": "required",
 									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/ahmedmohammed/Pictures/Screenshots/Screenshot 2023-05-24 160020.png"
+									"value": null
 								},
 								{
 									"key": "role",
-									"value": "representative",
+									"value": "client",
 									"description": "representative, client",
 									"type": "text"
+								},
+								{
+									"key": "meters_coverage",
+									"value": "30000",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -527,7 +534,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/products?limit=40&page=1",
+							"raw": "{{ALARYAF_URL}}/products?limit=40&page=2",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -541,7 +548,7 @@
 								},
 								{
 									"key": "page",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						},
@@ -563,16 +570,7 @@
 					},
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "X-localization",
-								"value": "ar"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0NzMzNTg2NSwibmJmIjoxNTQ3MzM1ODY1LCJqdGkiOiJqdmJlSmIwalpVZnRUekNrIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qFKpETqY7u2YDZzxPeHecHAA52Awqfy7u_G6jXhRL_Q"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -583,8 +581,9 @@
 								},
 								{
 									"key": "product_unit_item_id",
-									"value": "4587",
-									"type": "text"
+									"value": "5179",
+									"type": "text",
+									"description": "5091"
 								}
 							]
 						},
@@ -600,7 +599,8 @@
 							"variable": [
 								{
 									"key": "product_id",
-									"value": "1012"
+									"value": "1068",
+									"description": "980"
 								}
 							]
 						},
@@ -1162,7 +1162,7 @@
 								{
 									"key": "order_status",
 									"value": "approved",
-									"description": "approved, pending, is_delivered",
+									"description": "on_processing\non_delivery",
 									"disabled": true
 								}
 							]
@@ -1185,8 +1185,8 @@
 							"formdata": [
 								{
 									"key": "status",
-									"value": "approved",
-									"description": "sholud be one of approved, is_delivered",
+									"value": "received",
+									"description": "on_delivery, received",
 									"type": "text"
 								}
 							]
@@ -1205,7 +1205,7 @@
 							"variable": [
 								{
 									"key": "order_id",
-									"value": "1"
+									"value": "16"
 								}
 							]
 						},
@@ -1503,12 +1503,12 @@
 								},
 								{
 									"key": "lat",
-									"value": "26.3592",
+									"value": "31.0300162",
 									"type": "text"
 								},
 								{
 									"key": "long",
-									"value": "43.9818",
+									"value": "31.3617659",
 									"type": "text"
 								}
 							]
@@ -1549,14 +1549,16 @@
 									"type": "text"
 								},
 								{
-									"key": "lat",
-									"value": "26.3592",
-									"type": "text"
+									"key": "latitude",
+									"value": "24.774265",
+									"type": "text",
+									"disabled": true
 								},
 								{
-									"key": "long",
-									"value": "43.9818",
-									"type": "text"
+									"key": "longitude",
+									"value": "46.738586",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "name",
@@ -1577,6 +1579,16 @@
 									"key": "email",
 									"value": "hashem@hashem.com",
 									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "30.46408990632923",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "30.934223964905797",
+									"type": "text"
 								}
 							]
 						},
@@ -1591,6 +1603,50 @@
 							]
 						},
 						"description": "Submit Adrees To Cart"
+					},
+					"response": []
+				},
+				{
+					"name": "payment_success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "25f366cd-0274-4791-9309-3530ea1b020c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/payment_success?cart_id=27&payment_id=07072808989172120973",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"payment_success"
+							],
+							"query": [
+								{
+									"key": "cart_id",
+									"value": "27"
+								},
+								{
+									"key": "payment_id",
+									"value": "07072808989172120973"
+								}
+							]
+						},
+						"description": "Register a New Client with The Regular Way"
 					},
 					"response": []
 				}
@@ -1713,6 +1769,55 @@
 					],
 					"path": [
 						"details"
+					]
+				},
+				"description": "Register a New Client with The Regular Way"
+			},
+			"response": []
+		},
+		{
+			"name": "get address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fe5015f-74c7-4ffb-abb2-cea2e196fc3d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "671b35b9-1327-4317-a33f-92606c77944b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ALARYAF_URL}}/address?latitude=30.044705117353175&longitude=30.996759265234388",
+					"host": [
+						"{{ALARYAF_URL}}"
+					],
+					"path": [
+						"address"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "30.044705117353175",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "30.996759265234388",
+							"type": "text"
+						}
 					]
 				},
 				"description": "Register a New Client with The Regular Way"
