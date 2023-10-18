@@ -160,13 +160,13 @@
 							"formdata": [
 								{
 									"key": "phone",
-									"value": "01111111111",
+									"value": "0536362738",
 									"description": "required 0102117406",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "pasword",
+									"value": "123456",
 									"type": "text"
 								},
 								{
@@ -257,7 +257,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "hashem client",
+									"value": "hashem client last",
 									"description": "required",
 									"type": "text"
 								},
@@ -270,7 +270,7 @@
 								},
 								{
 									"key": "phone",
-									"value": "044444444",
+									"value": "01100000000",
 									"description": "unique, required",
 									"type": "text"
 								},
@@ -581,9 +581,16 @@
 								},
 								{
 									"key": "product_unit_item_id",
-									"value": "5179",
+									"value": "5091",
 									"type": "text",
-									"description": "5091"
+									"description": "5091 production"
+								},
+								{
+									"key": "",
+									"value": "",
+									"description": "3993",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -596,10 +603,19 @@
 								"carts",
 								":product_id"
 							],
+							"query": [
+								{
+									"key": null,
+									"value": null,
+									"description": "1068 production",
+									"type": "text",
+									"disabled": true
+								}
+							],
 							"variable": [
 								{
 									"key": "product_id",
-									"value": "1068",
+									"value": "980",
 									"description": "980"
 								}
 							]
@@ -991,6 +1007,53 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "show-order-details",
+					"id": "57b05b66-1f3d-4cb8-bed5-980aeacf9cc0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/orders/:order_id",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"orders",
+								":order_id"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "on_processing",
+									"description": "opening, on_processing, prepared, refused, on_delivery, received, not_received",
+									"disabled": true
+								},
+								{
+									"key": "payment_way",
+									"value": "online",
+									"description": "cash, online",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "182dd59f-fe71-4456-ba92-cff0a7d43208"
@@ -1172,6 +1235,36 @@
 					"response": []
 				},
 				{
+					"name": "show-order",
+					"id": "2a32b937-b491-4ff7-acf4-a63456cc1c46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ALARYAF_URL}}/representative/:order_id/orders",
+							"host": [
+								"{{ALARYAF_URL}}"
+							],
+							"path": [
+								"representative",
+								":order_id",
+								"orders"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get All Areas - No Params - Can Change Lanugae using X-localization"
+					},
+					"response": []
+				},
+				{
 					"name": "change-order-status",
 					"id": "64805630-fff9-46d3-a594-b612017b3817",
 					"protocolProfileBehavior": {
@@ -1227,17 +1320,17 @@
 							"formdata": [
 								{
 									"key": "live_lat",
-									"value": "17.01",
+									"value": "26.07080554186353",
 									"type": "text"
 								},
 								{
 									"key": "live_long",
-									"value": "18.01",
+									"value": "43.922643810510635",
 									"type": "text"
 								},
 								{
 									"key": "cart_address_id",
-									"value": "5",
+									"value": "3",
 									"type": "text"
 								}
 							]
@@ -1541,7 +1634,8 @@
 								{
 									"key": "delivery_way",
 									"value": "store",
-									"type": "text"
+									"type": "text",
+									"description": "store, home"
 								},
 								{
 									"key": "address",
@@ -1582,12 +1676,12 @@
 								},
 								{
 									"key": "lat",
-									"value": "30.46408990632923",
+									"value": "26.3382401",
 									"type": "text"
 								},
 								{
 									"key": "long",
-									"value": "30.934223964905797",
+									"value": "43.96581459999999",
 									"type": "text"
 								}
 							]
@@ -1628,7 +1722,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{ALARYAF_URL}}/payment_success?cart_id=27&payment_id=07072808989172120973",
+							"raw": "{{ALARYAF_URL}}/payment_success?cart_id=2&payment_id=07072808989172120973",
 							"host": [
 								"{{ALARYAF_URL}}"
 							],
@@ -1638,7 +1732,7 @@
 							"query": [
 								{
 									"key": "cart_id",
-									"value": "27"
+									"value": "2"
 								},
 								{
 									"key": "payment_id",
